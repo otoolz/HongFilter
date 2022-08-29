@@ -16,10 +16,30 @@ struct MainView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width)
+                
+                Spacer()
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(hongFilterViewModel.allImages) { filtered in
+                            Image(uiImage: filtered.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 150, height: 150)
+                            
+                            //Updating MainView...
+                            //WhenEver Button
+                                .onTapGesture {
+                                    hongFilterViewModel.mainView = filtered
+                                }
+                        }
+                    }
+                    .padding()
+                }
             } else {
                 Text("앨범에서 사진을 고르세요!")
             }
             Spacer()
+            
             HStack {
                 Button(action: {hongFilterViewModel.imagePicker.toggle()}) {
                     Text("Photo")

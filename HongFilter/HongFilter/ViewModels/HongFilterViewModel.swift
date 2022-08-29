@@ -22,6 +22,7 @@ class HongFilterViewModel: ObservableObject {
     
     let context = CIContext()
     
+    // func load(filter: CIFilter) async { }
     func loadFilter() {
         filters.forEach { (filter) in
             DispatchQueue.global(qos: .userInteractive).async {
