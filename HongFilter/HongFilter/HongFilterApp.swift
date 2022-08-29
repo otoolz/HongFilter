@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct HongFilterApp: App {
+    @StateObject var hongFilterViewModel = HongFilterViewModel()
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(hongFilterViewModel)
         }
     }
 }
