@@ -10,7 +10,6 @@ import CoreImage
 import CoreImage.CIFilterBuiltins
 
 enum HongFilter: CaseIterable {
-   /*
     case gaussianBlur
     case bloom
     
@@ -27,5 +26,10 @@ enum HongFilter: CaseIterable {
         case .gaussianBlur : return CIFilter.gaussianBlur()
         }
     }
-    */
+}
+
+struct HongFilterImage: Identifiable {
+    var id = UUID().uuidString
+    var image: UIImage
+    var filter: CIFilter
 }
