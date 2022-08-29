@@ -14,6 +14,8 @@
 		A0E4F0BE28BB90E300379997 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4F0BD28BB90E300379997 /* ImagePicker.swift */; };
 		A0E4F0C128BC575200379997 /* HongFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4F0C028BC575200379997 /* HongFilterModel.swift */; };
 		A0E4F0C428BC624600379997 /* HongFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4F0C328BC624600379997 /* HongFilterViewModel.swift */; };
+		A0E4F0C728BC8B5100379997 /* Origin.metal in Sources */ = {isa = PBXBuildFile; fileRef = A0E4F0C628BC8B5100379997 /* Origin.metal */; };
+		A0E4F0C928BC8BA800379997 /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4F0C828BC8BA800379997 /* Origin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		A0E4F0BD28BB90E300379997 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A0E4F0C028BC575200379997 /* HongFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongFilterModel.swift; sourceTree = "<group>"; };
 		A0E4F0C328BC624600379997 /* HongFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongFilterViewModel.swift; sourceTree = "<group>"; };
+		A0E4F0C628BC8B5100379997 /* Origin.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Origin.metal; sourceTree = "<group>"; };
+		A0E4F0C828BC8BA800379997 /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		A0E4F0AD28BB67BA00379997 /* HongFilter */ = {
 			isa = PBXGroup;
 			children = (
+				A0E4F0C528BC8AAE00379997 /* Filters */,
 				A0E4F0C228BC623000379997 /* ViewModels */,
 				A0E4F0BF28BB97FF00379997 /* Models */,
 				A0E4F0BC28BB8F1600379997 /* Views */,
@@ -98,6 +103,15 @@
 				A0E4F0C328BC624600379997 /* HongFilterViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A0E4F0C528BC8AAE00379997 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				A0E4F0C628BC8B5100379997 /* Origin.metal */,
+				A0E4F0C828BC8BA800379997 /* Origin.swift */,
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,8 +187,10 @@
 				A0E4F0BE28BB90E300379997 /* ImagePicker.swift in Sources */,
 				A0E4F0B128BB67BA00379997 /* MainView.swift in Sources */,
 				A0E4F0C428BC624600379997 /* HongFilterViewModel.swift in Sources */,
+				A0E4F0C728BC8B5100379997 /* Origin.metal in Sources */,
 				A0E4F0AF28BB67BA00379997 /* HongFilterApp.swift in Sources */,
 				A0E4F0C128BC575200379997 /* HongFilterModel.swift in Sources */,
+				A0E4F0C928BC8BA800379997 /* Origin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

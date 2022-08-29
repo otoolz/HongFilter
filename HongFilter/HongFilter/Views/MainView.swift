@@ -11,7 +11,15 @@ struct MainView: View {
     @EnvironmentObject var hongFilterViewModel: HongFilterViewModel
     var body: some View {
         VStack {
-            Text("앨범에서 사진을 고르세요!")
+            if hongFilterViewModel.mainImage != nil {
+                Image(uiImage: hongFilterViewModel.mainImage.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 3 * 4)
+            } else {
+                Text("앨범에서 사진을 고르세요!")
+            }
+            Spacer()
             HStack {
                 Button(action: {hongFilterViewModel.imagePicker.toggle()}) {
                     Image(systemName: "photo")
