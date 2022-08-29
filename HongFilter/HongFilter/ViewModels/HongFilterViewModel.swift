@@ -11,7 +11,35 @@ import CoreImage
 class HongFilterViewModel: ObservableObject {
     @Published var imagePicker = false
     @Published var imageData = Data(count: 0)
-    @Published var mainImage: HongFilterImage!
+    @Published var allImages: [HongFilterImage] = []
+    @Published var mainView: HongFilterImage!
+    
+    let filters = [
+        Origin(),
+        CIFilter.gaussianBlur(),
+        CIFilter.bloom()
+    ]
     
     let context = CIContext()
+    
+    func loadFilter() {
+        filters.forEach { (filter) in
+            DispatchQueue.global(qos: .userInteractive).async {
+                let CiImage = CIImage(data: self.imageData)
+                
+                filter.setValue(CiImage!, forKey: kCIInputImageKey)
+                
+                guard let newImage = filter.outputImage else { return }
+                
+                let cgimage = self.context.createCGImage(newImage, from: newImage.extent)
+                
+                let filteredData = HongFilterImage(image: UIImage(cgImage: cgimage!), filter: filter)
+                
+                DispatchQueue.main.async {
+                    self.allImages.append(filteredData)
+                    if self.mainView == nil { self.mainView = self.allImages.first }
+                }
+            }
+        }
+    }
 }
