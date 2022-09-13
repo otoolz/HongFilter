@@ -6,9 +6,10 @@
 //
 
 #include <metal_stdlib>
+#include <CoreImage/CoreImage.h>
+
 using namespace metal;
 
-#include <CoreImage/CoreImage.h>
 
 extern "C" {
      namespace coreimage {

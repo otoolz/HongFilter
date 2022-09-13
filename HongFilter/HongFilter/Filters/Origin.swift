@@ -11,7 +11,6 @@ import CoreImage
 class Origin: CIFilter {
     
     private let kernel: CIKernel
-    // inputkey에 대한 것도 추가를 해줘야 필터로 쓰던가 할ㄹ듯
     
     @objc dynamic var inputImage: CIImage?
     
@@ -32,5 +31,26 @@ class Origin: CIFilter {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var attributes: [String : Any] {
+        return [
+            kCIAttributeFilterDisplayName: "Origin",
+            
+            "inputImage": [kCIAttributeIdentity: 0,
+                           kCIAttributeClass: "CIImage",
+                           kCIAttributeDisplayName: "Image",
+                           kCIAttributeType: kCIAttributeTypeImage]
+            /*
+             "inputVerticalAmount": [kCIAttributeIdentity: 0,
+                                     kCIAttributeClass: "NSNumber",
+                                     kCIAttributeDefault: 20,
+                                     kCIAttributeDisplayName: "Vertical Amount",
+                                     kCIAttributeMin: 0,
+                                     kCIAttributeSliderMin: 0,
+                                     kCIAttributeSliderMax: 100,
+                                     kCIAttributeType: kCIAttributeTypeScalar]
+             */
+        ]
     }
 }
