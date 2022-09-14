@@ -9,18 +9,13 @@ import SwiftUI
 
 @main
 struct HongFilterApp: App {
-  //  @StateObject var hongFilterViewModel = HongFilterViewModel()
-    @StateObject var homeViewModel = HomeViewModel()
+    
+    @StateObject var hongFilterViewModel = HongFilterViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            //MainView()
-            //    .environmentObject(hongFilterViewModel)
-            NavigationView {
-                Home()
-                    .navigationBarTitle("Filter")
-                    .preferredColorScheme(.dark)
-                    .environmentObject(homeViewModel)
-            }
+            MainView()
+                .environmentObject(hongFilterViewModel)
         }
     }
 }

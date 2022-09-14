@@ -85,7 +85,7 @@ class HongFilterViewModel: ObservableObject {
         }
     }
     func spaceBackground() {
-        let backgroundImage = UIImage(named: "bg")!
+        let backgroundImage = UIImage(named: "bg")!.resized(to: inputImage.size)
         
         let beginImage = CIImage(cgImage: inputImage.cgImage!)
         let background = CIImage(cgImage: backgroundImage.cgImage!).cropped(to: CGRect(x: 0, y: 0, width: inputImage.size.width, height: inputImage.size.height))
@@ -99,21 +99,5 @@ class HongFilterViewModel: ObservableObject {
             self.outputImage = UIImage(cgImage: filteredImageRef!)
             rmBGView = HongFilterImage(image: self.outputImage, filter: Origin())
         }
-    }
-}
-
-extension CIFilter {
-    static func spaceBackground(inputImage: UIImage, maskImage: UIImage) -> CIFilter {
-        let backgroundImage = UIImage(named: "bg")!
-        
-        let beginImage = CIImage(cgImage: inputImage.cgImage!)
-        let background = CIImage(cgImage: backgroundImage.cgImage!)
-        let mask = CIImage(cgImage: maskImage.cgImage!)
-        
-        return CIFilter(name: "CIBlendWithMask",  parameters: [
-            kCIInputImageKey: beginImage,
-            kCIInputBackgroundImageKey:background,
-            kCIInputMaskImageKey:mask])!
-        
     }
 }
